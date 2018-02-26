@@ -53,11 +53,10 @@ bool ListaCandidatos::estaVazia() {
 
 void ListaCandidatos::adicioneComoHead(Candidato* c) {
     if (isFirstNode()) {
-        head = new NoCandidato(c, head);
         end = head;
-    } else {
+    } 
         head = new NoCandidato(c, head);
-    }
+    
 
     listSize++;
 
@@ -130,13 +129,8 @@ void ListaCandidatos::removeTheNode(NoCandidato*& n) {
 void ListaCandidatos::deleteThemiddle(NoCandidato*& n) {
     NoCandidato* newNext = n->next->next;
 
-
-
-
     delete n->next;
     n->next = newNext;
-
-
 
     listSize--;
 }
@@ -160,8 +154,9 @@ void ListaCandidatos::filtrarCandidatos(int _nota) {
 
 
         if (tempHead->conteudo->nota < _nota) {
+            NoCandidato* proxTemp = tempHead->next;
             removeTheNode(backNode);
-            restartFilter(backNode, tempHead);
+            tempHead = proxTemp;
         } else {
             backNode = tempHead;
             tempHead = tempHead->next;
