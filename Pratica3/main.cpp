@@ -22,11 +22,14 @@ using namespace std;
 int main(int argc, char** argv) {
 
     Test pratica3;
-    //  pratica3.test1();
-    //  pratica3.test2();
-    //  pratica3.test3();
+    // pratica3.test1();
+    // pratica3.test2();
+    // pratica3.test3();
     // pratica3.test4();
-    pratica3.solve22();
+    // pratica3.solve22();
+    // pratica3.solve1();
+    // pratica3.solve40();
+
     return 0;
 }
 

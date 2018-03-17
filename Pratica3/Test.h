@@ -24,6 +24,10 @@ public:
     void test3();
     void test4();
     void solve22();
+    void solve1();
+    void solve40();
+    
+    
 private:
 
 };

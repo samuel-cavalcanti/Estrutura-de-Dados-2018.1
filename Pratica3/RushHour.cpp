@@ -139,10 +139,12 @@ void RushHour::printSolution(State* s) {
     int n = 0;
     std::list<State*> allSteps;
 
-    for (State* i = s; i != NULL; i = i->prev) {
+    for (State* i = s; i->prev != NULL; i = i->prev) {
         allSteps.push_front(i);
         n++;
     }
+
+
 
     std::cout << n << " deslocamentos" << std::endl;
 

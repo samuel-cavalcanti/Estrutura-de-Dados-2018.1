@@ -158,29 +158,78 @@ void Test::test4() {
 void Test::solve22() {
 
     int nbcars = 12;
-    std::vector<std::string> color1 = {"vermelho", "verde claro", "amarelo", "laranja",
+    std::vector<std::string> color = {"vermelho", "verde claro", "amarelo", "laranja",
         "violeta claro", "azul ceu", "rosa", "violeta", "verde", "preto", "bege", "azul"};
 
-    std::vector<bool> horiz1 = {true, false, true, false, false, true, false,
+    std::vector<bool> horiz = {true, false, true, false, false, true, false,
         true, false, true, false, true};
 
-    std::vector<int> len1 = {2, 2, 3, 2, 3, 2, 2, 2, 2, 2, 2, 3};
+    std::vector<int> len = {2, 2, 3, 2, 3, 2, 2, 2, 2, 2, 2, 3};
 
-    std::vector<int> moveon1 = {2, 2, 0, 0, 3, 1, 1, 3, 0, 4, 5, 5};
+    std::vector<int> moveon = {2, 2, 0, 0, 3, 1, 1, 3, 0, 4, 5, 5};
 
     std::vector<int> start = {1, 0, 3, 1, 1, 4, 3, 4, 4, 2, 4, 1};
 
-    RushHour rushHour(nbcars, color1, horiz1, len1, moveon1);
+    RushHour rushHour(nbcars, color, horiz, len, moveon);
 
     State* s = new State(start);
+
     s = rushHour.solve(s);
-    
+
     rushHour.printSolution(s);
 
 
+}
+
+void Test::solve1() {
+
+    int nbcars = 8;
+    std::vector<std::string> color = {"vermelho", "verde claro", "violeta",
+        "laranja", "verde", "azul ceu", "amarelo", "azul"};
+
+    std::vector<bool> horiz = {true, true, false, false, true,
+        true, false, false};
+
+    std::vector<int> len = {2, 2, 3, 2, 3, 2, 3, 3};
+
+    std::vector<int> moveon = {2, 0, 0, 0, 5, 4, 5, 3};
+
+    std::vector<int> start = {1, 0, 1, 4, 2, 4, 0, 1};
+
+    RushHour rushHour(nbcars, color, horiz, len, moveon);
+
+    State* s = new State(start);
+
+    s = rushHour.solve(s);
+
+    rushHour.printSolution(s);
 
 
+}
 
+void Test::solve40() {
+
+
+    int nbcars = 13;
+    std::vector<std::string> color = {"vermelho", "amarelo", "verde claro", "laranja", "azul claro",
+        "rosa", "violeta claro", "azul", "violeta", "verde", "preto", "bege", "amarelo claro"};
+
+    std::vector<bool> horiz = {true, false, true, false, false, false, false,
+        true, false, false, true, true, true};
+
+    std::vector<int> len = {2, 3, 2, 2, 2, 2, 3, 3, 2, 2, 2, 2, 2};
+
+    std::vector< int > moveon = {2, 0, 0, 4, 1, 2, 5, 3, 3, 2, 4, 5, 5};
+
+    std::vector<int> start = {3, 0, 1, 0, 1, 1, 1, 0, 3, 4, 4, 0, 3};
+
+    RushHour rushHour(nbcars, color, horiz, len, moveon);
+
+    State* s = new State(start);
+
+    s = rushHour.solve(s);
+
+    rushHour.printSolution(s);
 
 
 }
