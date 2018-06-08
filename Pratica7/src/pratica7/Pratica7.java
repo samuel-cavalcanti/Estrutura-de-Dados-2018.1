@@ -19,8 +19,8 @@ public class Pratica7 {
 
         TestPratica test = new TestPratica();
         // test.test1();
-       // test.testRodeDir();
-      //  test.testRodeEsq();
+      // test.testRodeDir();
+     //   test.testRodeEsq();
           test.finalTest();
 
     }

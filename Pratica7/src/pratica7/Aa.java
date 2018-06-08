@@ -76,7 +76,7 @@ public class Aa {
             return a;
         }
 
-        if (a.dir.cor != a.dir.dir.cor) {
+        if (a.dir.cor != R || a.dir.dir.cor != R) {
             return a;
         }
 

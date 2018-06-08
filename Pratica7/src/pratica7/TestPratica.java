@@ -66,24 +66,25 @@ public class TestPratica {
 
     public void finalTest() {
 
-        Aa treeTest = new Aa(2, N, null, null);
+        Aa treeTest = new Aa(2, R, null, null);
 
         Random ger = new Random();
 
         for (int i = 0; i < 6; i++) {
             int value = ger.nextInt(15);
             treeTest = treeTest.insereECorrigeRaiz(treeTest, value);
+            new Fenetre(treeTest, " testeFinal" + i);
             System.out.print(value + " ");
 
         }
-        treeTest = treeTest.insereECorrigeRaiz(treeTest, 1);
+      
 
         System.out.println();
 
         System.out.println(treeTest.testeArvoreAa(treeTest));
         System.out.println(infixe(treeTest));
 
-        new Fenetre(treeTest, " testeFinal");
+        
 
     }
 
