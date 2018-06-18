@@ -51,7 +51,8 @@ public class Aa {
             return a;
         }
 
-        if (a.esq.cor  == N) {
+//        if (a.esq.cor  == N) {
+        if (a.esq.cor != a.cor) {
             return a;
         }
 
@@ -76,23 +77,24 @@ public class Aa {
             return a;
         }
 
-        if (a.dir.cor != R || a.dir.dir.cor != R) {
-            return a;
+//        if (a.dir.cor != R || a.dir.dir.cor != R) {
+//        if (a.dir.cor != a.cor || a.dir.dir.cor != a.cor) {
+//            return a;
+//        }
+        if (a.dir.cor == a.cor && a.dir.dir.cor == a.cor) {
+
+            Aa m = a;
+
+            // N sobe
+            a = a.dir;
+            // M recebe o filho esquerdo de N
+            m.dir = a.esq;
+            // N adota M 
+            a.esq = m;
+            a.cor++;
         }
 
-        Aa m = a;
-
-        // N sobe
-        a = a.dir;
-        // M recebe o filho esquerdo de N
-        m.dir = a.esq;
-        // N adota M 
-        a.esq = m;
-
-  
-        a.dir.cor = N;
-        
-
+//        a.dir.cor = N;
         return a;
 
     }
@@ -100,7 +102,7 @@ public class Aa {
     static Aa insere(Aa a, int i) {
 
         if (a == null) {
-            a = new Aa(i, R, null, null);
+            a = new Aa(i, 1, null, null);
 
         } else if (a.value > i) {
             a.esq = insere(a.esq, i);
@@ -112,20 +114,14 @@ public class Aa {
 
         a = a.rodeEsq(a);
 
-       
-
-
         return a;
     }
 
-  
     Aa insereECorrigeRaiz(Aa a, int i) {
-   
 
         a = insere(a, i);
 
-        a.cor = N;
-        
+        // a.cor = N;
         return a;
 
     }

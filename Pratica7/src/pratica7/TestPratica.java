@@ -66,11 +66,11 @@ public class TestPratica {
 
     public void finalTest() {
 
-        Aa treeTest = new Aa(2, R, null, null);
+        Aa treeTest = new Aa(2, 1, null, null);
 
         Random ger = new Random();
 
-        for (int i = 0; i < 6; i++) {
+        for (int i = 0; i < 64; i++) {
             int value = ger.nextInt(15);
             treeTest = treeTest.insereECorrigeRaiz(treeTest, value);
             new Fenetre(treeTest, " testeFinal" + i);

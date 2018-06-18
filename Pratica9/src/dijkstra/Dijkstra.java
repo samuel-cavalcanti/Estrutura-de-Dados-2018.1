@@ -35,7 +35,10 @@ public class Dijkstra {
 
     // atualizacao da distancia, da prioridade, e do predecessor de um no
     void update(int target, int origin) {
-        int currentDist = dist[origin] + g.value(origin, target);
+        if (dist[origin] == Integer.MAX_VALUE )
+            return;
+                
+        int currentDist =  dist[origin] + g.value(origin, target) ;
 
         if (dist[target] < currentDist) {
             return;

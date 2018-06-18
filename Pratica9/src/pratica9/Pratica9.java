@@ -24,8 +24,8 @@ public class Pratica9 {
         // TODO code application logic here
         // Test1.main(args);
         //  Test2.main(args);
-        // Test3.main(args);
-        Test4.main(args);
+         Test3.main(args);
+       // Test4.main(args);
     }
     
 }
