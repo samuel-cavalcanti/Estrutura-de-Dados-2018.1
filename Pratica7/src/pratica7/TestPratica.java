@@ -38,9 +38,8 @@ public class TestPratica {
 
         new Fenetre(a, "antes da rotação a direita ");
 
-    
         a = a.rodeDir(a);
-        
+
         new Fenetre(a, " depois da rotação a direita");
 
     }
@@ -57,7 +56,6 @@ public class TestPratica {
 
         new Fenetre(a, "antes da rotação a esquerda");
 
-       
         a = a.rodeEsq(a);
 
         new Fenetre(a, " depois da rotação  a esquerda");
@@ -73,18 +71,13 @@ public class TestPratica {
         for (int i = 0; i < 64; i++) {
             int value = ger.nextInt(15);
             treeTest = treeTest.insereECorrigeRaiz(treeTest, value);
-            new Fenetre(treeTest, " testeFinal" + i);
-            System.out.print(value + " ");
 
         }
-      
 
-        System.out.println();
-
-        System.out.println(treeTest.testeArvoreAa(treeTest));
+       new Fenetre(treeTest, "");
+       
+        System.out.println("teste testeArvoreAa: "+ treeTest.testeArvoreAa(treeTest));
         System.out.println(infixe(treeTest));
-
-        
 
     }
 

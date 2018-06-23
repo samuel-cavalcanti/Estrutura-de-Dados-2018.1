@@ -29,7 +29,7 @@ class DArbre {
         if (a == null) {
             return null;
         } else {
-            return new DArbre(copyArbre(a.esq), "" + a.value + "/" + a.cor, a.cor == Aa.R ? Color.red : Color.black, copyArbre(a.dir));
+            return new DArbre(copyArbre(a.esq), "" + a.cor, a.cor == Aa.R ? Color.red : Color.black, copyArbre(a.dir));
         }
     }
 

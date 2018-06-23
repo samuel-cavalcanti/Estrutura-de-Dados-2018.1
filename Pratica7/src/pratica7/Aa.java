@@ -127,7 +127,9 @@ public class Aa {
     }
 
     static boolean testeArvoreAa(Aa a) {
-        return testSubArvoreAa(a, nivel(a), false);
+        // variavel cor agora representa o nível
+
+        return testSubArvoreAa(a, nivel(a));
     }
 
     static int nivel(Aa a) {
@@ -136,33 +138,32 @@ public class Aa {
             return 0;
         }
 
-        return (a.cor == N) ? 1 : 0 + nivel(a.esq);
+        return a.cor;
 
     }
 
-    static boolean testSubArvoreAa(Aa a, int n, boolean raizPodeSerVermelha) {
+    static boolean testSubArvoreAa(Aa a, int n) {
         if (a == null && n == 0) {
             return true;
         }
 
-        if (a.cor == R) {
-            if (raizPodeSerVermelha == true) {
+        /* não precisa verifcar se a raiz é vermelha,
+        mas precisa verifcar se o filho da esquerda é
+        de mesmo nivel que o pai https://en.wikipedia.org/wiki/AA_tree 
+         */
+        if (a.esq != null) {
+            if (a.cor == a.esq.cor) {
                 return false;
             }
-            raizPodeSerVermelha = true;
+            return testSubArvoreAa(a.esq, n - 1);
+
+        } else {   // na  https://en.wikipedia.org/wiki/AA_tree , fala que o menor nivel é 1
+            if (a.cor == 1) {
+                return true;
+            }
+            return false;
         }
-
-        boolean pass = false;
-
-        if (a.esq != null) {
-            pass = testSubArvoreAa(a.esq, n - 1, raizPodeSerVermelha);
-        }
-
-        if (a.dir != null) {
-            pass = testSubArvoreAa(a.dir, n - 1, raizPodeSerVermelha);
-        }
-
-        return pass;
+      
 
     }
 
